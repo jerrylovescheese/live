@@ -32,19 +32,6 @@ def serve_page(page_name):
         abort(404)  # Return a 404 error if the page doesn't exist
 
 
-@app.route("/pages/subpages/<subpage_name>.html")
-def serve_subpage(subpage_name):
-    subpage_path = os.path.join("pages", "subpages", f"{subpage_name}.html")
-    if os.path.exists(subpage_path):
-        # Read the page content here and pass it to the template
-        with open(subpage_path, "r") as file:
-            file = open(subpage_path, encoding="utf8")
-            content = file.read()
-        return render_template("dynamic_subpage.html", content=content)
-    else:
-        abort(404)  # Return a 404 error if the subpage doesn't exist
-
-
 freezer = Freezer(app)
 
 # Register generator for dynamic pages
