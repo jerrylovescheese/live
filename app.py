@@ -47,15 +47,5 @@ def serve_page():
             yield {"page_name": file_name[:-5]}
 
 
-@freezer.register_generator
-def serve_subpage():
-    # List all files in the 'pages/subpages' directory
-    subpages_dir = os.path.join("pages", "subpages")
-    for file_name in os.listdir(subpages_dir):
-        if file_name.endswith(".html"):
-            # Pass the subpage name without '.html'
-            yield {"subpage_name": file_name[:-5]}
-
-
 if __name__ == "__main__":
     freezer.freeze()
