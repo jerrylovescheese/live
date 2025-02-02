@@ -400,13 +400,13 @@ main {
 
 .index-activity {
     width: calc(100% - 30px);
-    height: 400px;
+    height: 405px;
     margin-left: 15px;
     margin-right: 15px;
-    margin-top: 140px;
     position: relative;
+    margin-bottom: 20px;
     border-radius: 20px;
-    background-size: contain;
+    background-size: 720px 405px;
     background-repeat: no-repeat;
     transition: all 0.2s;
 }
@@ -415,8 +415,8 @@ main {
     scale: 98%;
 }
 
-.index-activity::before,
-.index-activity::after {
+#index-activity-1::before,
+#index-activity-1::after {
     display: block;
     position: absolute;
     top: -40px;
@@ -433,7 +433,7 @@ main {
     line-height: 40px;
 }
 
-.index-activity::after {
+#index-activity-1::after {
     width: 80%;
     height: 25px;
     left: 10%;
@@ -445,9 +445,10 @@ main {
 #index-activity-1 {
     background-image: url(../images/activity-1.webp);
     background-color: #ffbca3;
+    margin-top: 140px;
 }
 
-#index-activity-1 .index-a-title {
+.index-a-title {
     position: absolute;
     right: 40px;
     top: 10px;
@@ -460,11 +461,11 @@ main {
 }
 
 @media (prefers-color-scheme: dark) {
-    .index-activity::before {
+    #index-activity-1::before {
         background-image: radial-gradient(ellipse at top, hwb(16 4% 40%) 10%, hsl(30, 100%, 8%));
     }
 
-    .index-activity::after {
+    #index-activity-1::after {
         background-image: radial-gradient(ellipse at top, hwb(26 0% 56%) 10%, hsl(30, 100%, 8%));
     }
 
@@ -511,6 +512,18 @@ main {
     font-family: 'Space Grotesk';
     src: url(../fonts/SpaceGrotesk[wght].woff2);
 }
+
+#index-activity-2 {
+    background-image: url(../images/GRAMMYS_2025_HERO_6.webp);
+    background-color: #28476F;
+    color: white;
+}
+
+#index-activity-2 svg {
+    fill: white;
+}
+
+/* cny2025.html */
 
 #cny2025-light {
     width: 100vw;
