@@ -280,6 +280,22 @@ main {
     margin-top: 60px;
 }
 
+/* cny2025.html */
+
+#cny2025-light {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(../images/activity-1.webp);
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+    filter: blur(300em);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    scale: 130%;
+}
+
 /* index.html */
 
 #index-light {
@@ -473,18 +489,32 @@ main {
     fill: white;
 }
 
-/* cny2025.html */
-
-#cny2025-light {
-    width: 100vw;
-    height: 100vh;
-    background-image: url(../images/activity-1.webp);
-    background-size: 100% 30%;
+.index-square {
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
-    filter: blur(300em);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -2;
-    scale: 130%;
+    border-radius: 5px;
+}
+
+#squares {
+    display: flex;
+    justify-content: space-between;
+}
+
+#index-square-1 {
+    background-image: url(../images/ADKq_NZzOEtJbFfl8wFPCW5J0Sm6BNSurD2TghwYYVh-wCvxB1mDLH66Ztrn4Jc3pnGu5rhhGvu_LefWhekwlhDjz489Iytiiin_nNf7BgP2iuADPf0lCdG9iDN7dgZJw_f_WDWbyiKu8ypiqWexG7Rbvz-LvTnfwVzo6vM_s0-d-e1-ft.jpg);
+}
+
+#index-square-2 {
+    background-image: url(../images/未命名.png);
+}
+
+#index-square-3{
+    background-image: url(../images/Snipaste_2025-02-26_09-34-51.webp);
+}
+
+#index-square-4{
+    background-image: url(../images/IMG_1032.webp);
 }
