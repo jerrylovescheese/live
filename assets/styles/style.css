@@ -363,6 +363,11 @@ main {
         top: unset !important;
         bottom: 6em;
     }
+
+    #squares {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+    }
 }
 
 .index-activity {
@@ -491,17 +496,30 @@ main {
 }
 
 .index-square {
-    width: 200px;
-    height: 200px;
+    width: auto;
+    height: auto;
+    aspect-ratio: 1/1;
+    margin-right: 10px;
+    margin-bottom: 10px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border-radius: 5px;
+    transition: all 0.2s;
+    cursor: help;
+}
+
+.index-square:active {
+    scale: 98%;
+}
+
+.index-square:hover {
+    scale: 102%;
 }
 
 #squares {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
 #index-square-1 {
@@ -518,4 +536,14 @@ main {
 
 #index-square-4 {
     background-image: url(../images/IMG_1032.webp);
+}
+
+#index-square-5 {
+    background-image: url(../images/Frame\ 2.PNG);
+}
+
+#index-square-6 {
+    background-image: url(../images/clock-bg.jpg);
+    background-size: 200%;
+    background-position: 0 0;
 }
