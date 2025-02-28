@@ -99,6 +99,7 @@
     display: flex;
     overflow-x: hidden;
     overflow-y: scroll;
+    scrollbar-width: none;
 }
 
 #bartender.active #more {
@@ -511,10 +512,10 @@ main {
     background-image: url(../images/未命名.png);
 }
 
-#index-square-3{
+#index-square-3 {
     background-image: url(../images/Snipaste_2025-02-26_09-34-51.webp);
 }
 
-#index-square-4{
+#index-square-4 {
     background-image: url(../images/IMG_1032.webp);
 }
