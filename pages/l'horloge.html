@@ -1,7 +1,47 @@
 <h3 id="heading">l'horloge</h3>
 
+<p id="text-subtitle">la minuterie</p>
+
+<input type="time" id="timer-input">
+<button onclick="timer()" id="timer-button">set timer</button>
+<audio id="timer-sound" src="../assets/audio/fasten-seatbelt.mp3"></audio>
+
+<p id="timer-display">
+    <span id="timer-set-minutes">00</span> :
+    <span id="timer-set-seconds">00</span>
+</p>
+
 <script>
-    function currentTime() {
-        
+    function timer() {
+        const timeValue = document.getElementById("timer-input").value;
+        const [minutes, seconds] = timeValue.split(':');
+
+        let minutesNum = parseInt(minutes);
+        let secondsNum = parseInt(seconds);
+
+        if (window.countdownInterval) {
+            clearInterval(window.countdownInterval);
+        }
+
+        updateDisplay();
+
+        window.countdownInterval = setInterval(() => {
+            if (secondsNum > 0) {
+                secondsNum--;
+            } else if (minutesNum > 0) {
+                minutesNum--;
+                secondsNum = 59;
+            } else {
+                clearInterval(window.countdownInterval);
+                document.getElementById("timer-sound").play();
+                return;
+            }
+            updateDisplay();
+        }, 1000);
+
+        function updateDisplay() {
+            document.getElementById("timer-set-minutes").innerText = String(minutesNum).padStart(2, "0");
+            document.getElementById("timer-set-seconds").innerText = String(secondsNum).padStart(2, "0");
+        }
     }
 </script>
