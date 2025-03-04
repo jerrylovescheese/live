@@ -640,3 +640,7 @@ main {
     align-items: center;
     margin-bottom: 100px;
 }
+
+#clock-seconds {
+    color: rgb(128, 128, 128);
+}
