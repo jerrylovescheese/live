@@ -1,20 +1,26 @@
 <div id="content-unit">
     <h3 id="heading">l'horloge</h3>
 
-    <p id="text-n">
-        It is now <span id="clock-hours"></span>:<span id="clock-minutes"></span>:<span id="clock-seconds"></span>
-    </p>
+    <span id="clock-numbers">
+        <span id="clock-hours"></span>:<span id="clock-minutes"></span>:<span id="clock-seconds"></span>
+    </span>
+    <br>
+    <button id="digi-clock-tog" onclick="clockExtend()">No Jerry I need a real clock.</button>
 
-    <p id="text-subtitle">la minuterie</p>
+    <div id="clock-bd"></div>
 
-    <input type="time" id="timer-input">
-    <button onclick="timer()" id="timer-button">set timer</button>
-    <audio id="timer-sound" src="../assets/audio/fasten-seatbelt.mp3" preload="auto"></audio>
+    <div id="minuterie">
+        <p id="text-subtitle">la minuterie</p>
 
-    <p id="timer-display">
-        <span id="timer-set-minutes">00</span> :
-        <span id="timer-set-seconds">00</span>
-    </p>
+        <input type="time" id="timer-input">
+        <button onclick="timer()" id="timer-button">set timer</button>
+        <audio id="timer-sound" src="../assets/audio/fasten-seatbelt.mp3" preload="auto"></audio>
+
+        <p id="timer-display">
+            <span id="timer-set-minutes">00</span> :
+            <span id="timer-set-seconds">00</span>
+        </p>
+    </div>
 
     <script>
         function timer() {
@@ -62,5 +68,14 @@
         setInterval(() => {
             clock();
         }, 1000);
+
+        document.getElementById("clock-bd").style.display = "none";
+
+        document.getElementById("digi-clock-tog").onclick = function () {
+            document.getElementById("heading").classList.toggle("hidden");
+            document.getElementById("minuterie").classList.toggle("hidden");
+            document.getElementById("clock-bd").classList.toggle("visible");
+            document.getElementById("clock-numbers").classList.toggle("extend");
+        };
     </script>
 </div>
