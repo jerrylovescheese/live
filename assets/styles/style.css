@@ -644,15 +644,46 @@ main {
 }
 
 .extend {
-    display: block;
     font-size: 20vw;
-    height: calc(100vh - 200px);
     display: flex;
-    justify-content: start;
-    align-items: center;
-    margin-bottom: 100px;
+    flex-direction: column;
+    height: calc(100vh - 100px);
+    justify-content: center;
 }
 
-#clock-seconds {
+#clock-numbers {
+    display: flex;
+}
+
+#clock-seconds,
+#clock-colon-2 {
+    color: rgba(128, 128, 128, 0.5);
+}
+
+#clock-colon-1,
+#clock-colon-2 {
+    position: relative;
+    top: -0.1em;
+}
+
+@keyframes update {
+    0% {
+        transform: translateY(0.06em);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.number-update {
+    animation: update 0.3s ease-out;
+}
+
+.extend-small {
+    font-size: 5vw;
+    height: 100px;
     color: rgb(128, 128, 128);
 }

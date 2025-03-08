@@ -1,13 +1,23 @@
 <div id="content-unit">
     <h3 id="heading">l'horloge</h3>
 
-    <span id="clock-numbers">
-        <span id="clock-hours"></span>:<span id="clock-minutes"></span>:<span id="clock-seconds"></span>
-    </span>
+    <div id="clock-bd"></div>
+
+    <div id="curtain-clock">
+        <span id="clock-numbers">
+            <span id="clock-hours"></span><span id="clock-colon-1">:</span><span id="clock-minutes"></span><span
+                id="clock-colon-2">:</span><span id="clock-seconds"></span>
+        </span>
+        <span id="clock-dates">
+            <span id="clock-month"></span> /
+            <span id="clock-date"></span> /
+            <span id="clock-year"></span>
+            <span id="clock-day"></span>
+        </span>
+    </div>
     <br>
     <button id="digi-clock-tog" onclick="clockExtend()">No Jerry I need a real clock.</button>
 
-    <div id="clock-bd"></div>
 
     <div id="minuterie">
         <p id="text-subtitle">la minuterie</p>
@@ -21,24 +31,6 @@
             <span id="timer-set-seconds">00</span>
         </p>
     </div>
-
-    <style>
-        @keyframes update {
-            0% {
-                transform: translateY(10px);
-                opacity: 0.6;
-            }
-
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .number-update {
-            animation: update 0.3s ease-out;
-        }
-    </style>
 
     <script>
         function timer() {
@@ -84,6 +76,14 @@
             const minutesElem = document.getElementById("clock-minutes");
             const secondsElem = document.getElementById("clock-seconds");
 
+            const year = now.getFullYear();
+            const month = now.getMonth();
+            const date = now.getDate();
+
+            document.getElementById("clock-year").innerText = year;
+            document.getElementById("clock-month").innerText = month;
+            document.getElementById("clock-date").innerText = date;
+
             updateWithAnimation(hoursElem, hours);
             updateWithAnimation(minutesElem, minutes);
             updateWithAnimation(secondsElem, seconds);
@@ -109,7 +109,8 @@
             document.getElementById("heading").classList.toggle("hidden");
             document.getElementById("minuterie").classList.toggle("hidden");
             document.getElementById("clock-bd").classList.toggle("visible");
-            document.getElementById("clock-numbers").classList.toggle("extend");
+            document.getElementById("curtain-clock").classList.toggle("extend");
+            document.getElementById("clock-dates").classList.toggle("extend-small");
         };
     </script>
 </div>
